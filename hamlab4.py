@@ -83,7 +83,7 @@ def phuong_trinh_bac_nhat(a, b):
             print("Vô số nghiệm")
             ket_qua = "Vô số nghiệm"
         else:
-            print("Vô nghiệm")
+            print("Vô nghiệm") 
             ket_qua = "Vô nghiệm"
     else:
         x =-b/a
