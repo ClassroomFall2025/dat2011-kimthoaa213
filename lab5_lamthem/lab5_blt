@@ -1,0 +1,65 @@
+from lab5_blt_lop import *
+
+lich_su = []
+
+menu()
+while True:
+    while True:
+        try: 
+            chon_chuc_nang = int(input("Chọn chức năng (1-10): "))
+            ket_qua = None   # reset kết quả mỗi lần chọn
+            break
+        except ValueError:
+            print("Lỗi: Vui lòng nhập số hợp lệ từ 1 - 10.")
+
+    match chon_chuc_nang:
+        case 1:
+            print(f"{ten_phep_tinh[chon_chuc_nang]}")
+            ket_qua = MayTinh().phep_tinh_co_ban()
+        
+        case 2:
+            print(f"{ten_phep_tinh[chon_chuc_nang]}")
+            ket_qua= MayTinh().luy_thua()
+
+        case 3:
+            print(f"{ten_phep_tinh[chon_chuc_nang]}")
+            #Căn bậc hai
+            ket_qua =MayTinh().can_bac_hai()
+
+        case 4: #ham luong giac
+            print(f"{ten_phep_tinh[chon_chuc_nang]}")
+            ket_qua= MayTinh().luong_giac()
+
+        case 5:  #logarit
+            print(f"{ten_phep_tinh[chon_chuc_nang]}")
+            ket_qua = MayTinh().logarit()
+            
+        case 6:#pt bac nhat
+            print(f"{ten_phep_tinh[chon_chuc_nang]}")
+            
+            ket_qua= MayTinh().phuong_trinh_bac_nhat()
+        
+        case 7:#pt bac 2
+            print(f"{ten_phep_tinh[chon_chuc_nang]}")
+            ket_qua = MayTinh().phuong_trinh_bac_hai()
+            
+        case 8: #lich su
+            MayTinh().in_lich_su(lich_su)
+                                
+        case 9:#thời gian hiện tại
+            print("Thời gian hiện tại:")
+            MayTinh().hien_thi_thoi_gian()
+
+        case 10:#thoat chuong trinh
+            print("Thoát chương trình")
+            break
+        case _:
+            print("Chức năng không hợp lệ. Vui lòng chọn lại.")
+            continue
+    
+    if ket_qua is not None :
+            lich_su.append({
+                "Phép tính": ten_phep_tinh[chon_chuc_nang] ,
+                "Kết quả": ket_qua
+            })
+    
